@@ -20,8 +20,8 @@ A Python script to download YouTube videos and audio with customizable resolutio
 
 1.  **Clonar el repositorio (o descargar `download.py`):**
     ```bash
-    git clone https://github.com/tu_usuario/tu_repositorio.git
-    cd tu_repositorio
+    git clone https://github.com/lestercollado/YouTube-Downloader.git
+    cd YouTube-Downloader
     ```
     (Si solo descargaste el archivo `download.py`, navega a la carpeta donde lo guardaste).
 
