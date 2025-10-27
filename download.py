@@ -23,13 +23,17 @@ def mostrar_progreso(d):
 
 def descargar_video(url, resolucion='best'):
     opciones = {
-        'format': f'bestvideo[height<={resolucion}]+bestaudio/best' if resolucion != 'best' else 'bestvideo+bestaudio/best',
+        'format': f'bestvideo[ext=mp4][height<={resolucion}]+bestaudio[ext=m4a]/best',
         'outtmpl': os.path.join(CARPETA_DESTINO, '%(title)s.%(ext)s'),
         'cookiesfrombrowser': (NAVEGADOR_COOKIES,),
         'merge_output_format': 'mp4',
         'progress_hooks': [mostrar_progreso],
         'quiet': False,
         'no_warnings': False,
+        'postprocessors': [{
+            'key': 'FFmpegVideoConvertor',
+            'preferedformat': 'mp4'
+        }],
     }
     try:
         with yt_dlp.YoutubeDL(opciones) as ydl:
